@@ -1,0 +1,38 @@
+<%- include("partials/header"); -%>
+
+<div class="container mt-5">
+  <h1>My Form</h1>
+  <br>
+  <div class="row">
+    <div class="col-sm-8">
+      <div class="card">
+        <div class="card-body">
+
+          <!-- Makes POST request to /login route -->
+          <form action="/" method="POST" autocomplete="off">
+            <div class="form-group">
+              <label for="text">First Name</label>
+              <input type="text" class="form-control" name="firstName" placeholder="First Name">
+            </div>
+            <div class="form-group">
+              <label for="text">Last Name</label>
+              <input type="text" class="form-control" name="lastName" placeholder="Last Name">
+            </div>
+            <div class="form-group">
+              <label for="number">Marks in Maths</label>
+              <input type="number" class="form-control" name="mathsMarks" min="0" max="100" placeholder="Marks in Maths">
+            </div>
+            <div class="form-group">
+              <label for="number">Marks in English</label>
+              <input type="number" class="form-control" name="englishMarks" min="0" max="100" placeholder="Marks in English">
+            </div>
+            <button type="submit" class="btn btn-dark">Submit</button>
+          </form>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%- include("partials/footer"); -%>
