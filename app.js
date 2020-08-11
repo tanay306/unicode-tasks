@@ -14,25 +14,29 @@ app.get("/", function (req, res) {
 
 
 app.post("/", function (req, res) {
+  //add new user
   const user = {
     Name: req.body.firstName + " " + req.body.lastName,
     Score: {
-      mathsMarks: parseInt(req.body.mathsMarks),
-      englishMarks: parseInt(req.body.englishMarks),
+      Maths: parseInt(req.body.mathsMarks),
+      English: parseInt(req.body.englishMarks),
     },
   };
   // console.log(user);
+  //save user in user array
   Users.push(user);
   //sort function
   Users.sort(function (a, b) {
-    return ((b.Score.mathsMarks + b.Score.englishMarks)/2) - ((a.Score.mathsMarks + a.Score.englishMarks)/2)
+    return ((b.Score.Maths + b.Score.English)/2) - ((a.Score.Maths + a.Score.English)/2)
   })
+  //redirect after sorting
   res.redirect("/")
 });
 
 
 
 app.get("/display", function (req, res) {
+  //display sorted array of users
   res.send(Users)
 });
 
